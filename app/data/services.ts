@@ -8,6 +8,7 @@ export interface Service {
   features: string[];
   relatedServices: string[];
   icon?: string;
+  image?: string; 
 }
 
 export const services: Service[] = [
@@ -26,7 +27,8 @@ export const services: Service[] = [
       "Express processing options"
     ],
     relatedServices: ["document-delivery", "business-partnership-contract"],
-    icon: "M9 12l2 2 4-4"
+    icon: "M9 12l2 2 4-4",
+    image: '/images/Pro.jpg'
   },
   {
     id: "rta-license",

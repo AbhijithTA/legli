@@ -35,7 +35,7 @@ const NavbarComponent = () => {
 
   const navItems = [
     { name: "Home", href: "/" },
-    { name: "About Us", href: "/about" },
+    { name: "About Us", href: "/aboutUs" },
     { 
       name: "Services", 
       href: "/services",
@@ -47,23 +47,23 @@ const NavbarComponent = () => {
 
   const servicesList = [
     { title: "PRO Service", slug: "pro-service" },
-    { title: "RTA License and Vehicle Renewal", slug: "rta-license-renewal" },
+    { title: "RTA License and Vehicle Renewal", slug: "rta-license" },
     { title: "Translation Services", slug: "translation-services" },
     { title: "Police Clearance Certificate", slug: "police-clearance" },
     { title: "Ejari Registration", slug: "ejari-registration" },
     { title: "Document Delivery Service", slug: "document-delivery" },
     { title: "LLC Agreement / MOA", slug: "llc-agreement" },
-    { title: "LLC Amendment and Share Sale", slug: "llc-amendment" },
     { title: "Local Service Agent Contract", slug: "local-service-agent" },
-    { title: "Business Partnership Contract", slug: "business-partnership" },
-    { title: "Side Agreement for Investors", slug: "investor-agreement" },
-    { title: "Online Medical Booking", slug: "medical-booking" },
-    { title: "Online Health Card Renewal", slug: "health-card-renewal" },
+    { title: "Business Partnership Contract & Supplement Agreements", slug: "business-partnership-contract" },
+    { title: "Legal protection for investor interests", slug: "side-agreement-investors" },
+    { title: "Online Medical Booking", slug: "online-medical-booking" },
+    { title: "Online Health Card Renewal", slug: "medical-booking" },
+    { title: "Online Health Card Renewal", slug: "online-health-card-renewal" },
     { title: "Power of Attorney", slug: "power-of-attorney" },
-    { title: "Memorandum of Understanding", slug: "mou" },
-    { title: "Business Sales Agreement", slug: "business-sales" },
-    { title: "Labour & Immigration Services", slug: "labour-immigration" },
-    { title: "Bank Guarantee Deposit Service", slug: "bank-guarantee" }
+    { title: "Memorandum of Understanding (MoU)", slug: "memorandum-of-understanding" },
+    { title: "Business Sales Agreement", slug: "business-sales-agreement" },
+    { title: "Labour & Immigration Services", slug: "labour-immigration-services" },
+    { title: "Bank Guarantee", slug: "bank-guarantee-service" }
   ];
 
   return (
