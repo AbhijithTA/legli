@@ -4,12 +4,20 @@ import Link from "next/link";
 import { services } from "@/app/data/services";
 import NavbarComponent from "@/components/NavbarComponent";
 import Footer from "@/components/FooterComponent";
+import type { Metadata } from 'next';
 
-type Props = {
+
+// type Props = {
+//   params: { serviceId: string };
+//   searchParams?: { [key: string]: string | string[] | undefined };
+// };
+
+type PageProps = {
   params: { serviceId: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export default function ServicePage({ params }: Props) {
+export default function ServicePage({ params }: PageProps) {
   const service = services.find((service) => service.slug === params.serviceId);
 
   if (!service) return notFound();
@@ -352,7 +360,27 @@ export default function ServicePage({ params }: Props) {
 }
 
 export function generateStaticParams() {
-  return Object.keys(services).map((serviceId) => ({
-    serviceId,
-  }));
+  return services.map((service) => ({
+    serviceId: service.slug
+  }))
+}
+
+// export async function generateMetadata({ params }: { params: { serviceId: string } }): Promise<Metadata> {
+//   const service = services.find((service) => service.slug === params.serviceId);
+  
+//   if (!service) return {};
+  
+//   return {
+//     title: service.title,
+//     description: service.description
+//   };
+// }/
+
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const service = services.find((service) => service.slug === params.serviceId);
+  if (!service) return {};
+  return {
+    title: service.title,
+    description: service.description
+  };
 }
