@@ -12,12 +12,15 @@ import type { Metadata } from 'next';
 //   searchParams?: { [key: string]: string | string[] | undefined };
 // };
 
-type PageProps = {
+
+
+interface PageProps {
   params: { serviceId: string };
   searchParams?: { [key: string]: string | string[] | undefined };
-};
+}
 
-export default function ServicePage({ params }: PageProps) {
+
+export default async function ServicePage({ params }: { params: { serviceId: string } }) {
   const service = services.find((service) => service.slug === params.serviceId);
 
   if (!service) return notFound();
@@ -376,7 +379,7 @@ export function generateStaticParams() {
 //   };
 // }/
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: { serviceId: string } }): Promise<Metadata> {
   const service = services.find((service) => service.slug === params.serviceId);
   if (!service) return {};
   return {
